@@ -1,13 +1,13 @@
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
-import {BottomMenu} from "./src/components/BottomMenu/BottomMenu";
+import {BottomMenuStack} from "./src/components/BottomMenu/BottomMenu";
 
 export default function App() {
   return (
     <NavigationContainer>
       <SafeAreaProvider>
-          <BottomMenu/>
+          <BottomMenuStack/>
       </SafeAreaProvider>
     </NavigationContainer>
   );
