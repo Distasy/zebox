@@ -14,7 +14,7 @@ export default function WinnerProfil(props) {
         // it shuld be async function .
         (async () => {
           const play_yes = await Audio.Sound.createAsync(
-            require('../../../assets/sounds/whoosh.mp3'),
+            require('../../../assets/sounds/zap.mp3'),
             { shouldPlay: true }
           );
         })();

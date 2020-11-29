@@ -79,7 +79,6 @@ export const TabBar = ({
           return (
             <TouchableOpacity
               accessibilityRole="button"
-              accessibilityStates={isFocused ? ["selected"] : []}
               accessibilityLabel={options.tabBarAccessibilityLabel}
               testID={options.tabBarTestID}
               onPress={onPress}
