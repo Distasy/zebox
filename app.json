@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "zeboxtsx",
-    "slug": "zeboxtsx",
+    "name": "ZeBox",
+    "slug": "ZeBox",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo_ZeBox_background.png",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo_ZeBox_background.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.distasy.zebox"
     },
     "web": {
       "favicon": "./assets/favicon.png"
