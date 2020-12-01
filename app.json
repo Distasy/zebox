@@ -7,7 +7,7 @@
     "icon": "./assets/logo_ZeBox_background.png",
     "splash": {
       "image": "./assets/loading_screen_zebox.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {

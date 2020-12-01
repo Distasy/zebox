@@ -9,7 +9,8 @@ import {
     Text,
     Divider,
     TouchableRipple,
-    Switch
+    Switch,
+    ProgressBar,
 } from 'react-native-paper';
 import {
     DrawerContentScrollView,
@@ -30,22 +31,21 @@ export default function CustomDrawer(props) {
                                 uri: "https://media.discordapp.net/attachments/775159078950535198/775832708479844392/avatar8.png"
                             }}
                             size={50}
+                            style={{backgroundColor: null}}
                         />
                         <View style={{marginLeft: 15, flexDirection: 'column'}}>
                             <Title style={styles.title}>Quentin</Title>
-                            <Caption style={styles.caption}>#10</Caption>
+                            <Caption style={[styles.caption, {marginTop: -5}]}>#10</Caption>
                         </View>
                     </View>
-
                     <View style={styles.row}>
                         <View style={styles.section}>
-                            <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
-                            <Caption style={styles.caption}>Following</Caption>
+                            <Caption style={styles.caption}>Niveau</Caption>
+                            <Paragraph style={[styles.paragraph, styles.caption]}> 1</Paragraph>
                         </View>
-                        <View style={styles.section}>
-                            <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
-                            <Caption style={styles.caption}>Followers</Caption>
-                        </View>
+                    </View>
+                    <View style={{width: '90%'}}>
+                        <ProgressBar progress={0.5} color="#ecd40a" />
                     </View>
                 </View>
 

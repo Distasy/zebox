@@ -6,8 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import FlipCard from 'react-native-flip-card';
 import { Audio } from 'expo-av';
 
-
-export default function RankingProfil(props: { colorUser: any; img: any; nbZb: any; pseudo: any; ranking: any;}) {
+export default function RankingProfil(props: { colorUser: any; img: any; nbZb: any; pseudo: any; ranking: any; partner: any; youtuber: any; online: any;}) {
 
     let  rectoVerso = false;
 
@@ -49,6 +48,45 @@ export default function RankingProfil(props: { colorUser: any; img: any; nbZb: a
    const pseudo     = props.pseudo;
    const nbZb       = props.nbZb;
    const ranking    = props.ranking;
+   const partner    = props.partner;
+   const youtuber   = props.youtuber;
+   const online     = props.online;
+
+   let colorP;
+   let colorY;
+   let colorA;
+   //const displayY2;
+    // Online
+   if ( online == true )
+   {
+        colorA = "green";
+   }
+   else
+   {
+        colorA = "red";
+   }
+
+   // Partner
+   if ( partner == true )
+   {
+        colorP = "#333333";
+   }
+   else
+   {
+        colorP = "transparent";
+   }
+
+
+   // Video
+   if ( youtuber == true )
+   {
+        colorY = "#333333";
+   }
+   else
+   {
+        colorY = "transparent";
+   }
+
    let trColor    = "transparent";
 
     if ( ranking == 1)
@@ -64,7 +102,8 @@ export default function RankingProfil(props: { colorUser: any; img: any; nbZb: a
         trColor = "#764219";
     }
 
-
+    // Condition à terminée 
+    // if ( partner == true )
 
   return (
     <FlipCard flipHorizontal={true} flipVertical={false} friction={15} onFlipStart={on_press_handle} >
@@ -131,12 +170,58 @@ export default function RankingProfil(props: { colorUser: any; img: any; nbZb: a
     end={[1.0, 2.0]}
     colors={['rgba(51, 51, 51, 0.20)', '#333333', '#333333']}
     style={styles.FadeAway_discover}>
+        
+        <View style={{position: 'absolute', height:"100%",  width: "12%", backgroundColor: colorUser, left:0, borderRadius:15, }}>
+            <View style={{position:"absolute", justifyContent:"center", alignItems: 'center', width: "100%", height:"100%"}}>
+                    <Icon name="power" size={30} color={colorA}/>
+                    <Icon name="video" size={30} color={colorY} />
+                    <Icon name="social-500px" size={30} color={colorP} />
+            </View>
+        </View>
 
 
-        <View style={{alignItems: 'center', top: "9%", position: 'absolute', width: '100%'}}>
-            <Text style={styles.pseudo}>Item won</Text>
-            <Text style={styles.pseudo}></Text>
-            <Text style={[styles.rarity, {color: colorUser}]}>tt</Text>
+
+        
+        <View style={{position: 'absolute', width:"50%", height:"100%", right: "0%"}}>
+            <View style={{alignItems:"center", top:"5%"}}>
+                <Icon name="previous" size={30} color="#F3F3F3"/>
+            </View>
+
+            <View style={{left: "15%", top:"5%"}}>
+            <Icon name="info" size={30} color="#F3F3F3"/>
+            <Icon name="info" size={30} color="#F3F3F3"/>
+            </View>
+                
+        </View>
+
+        <View style={{position: 'absolute', width:"50%", height:"100%", left: "0%"}}>
+            <View style={{alignItems:"center", top:"5%"}}>
+                <Icon name="previous" size={30} color="#F3F3F3"/>
+            </View>
+            
+            <View style={{left: "15%", top:"5%"}}>
+            <Icon name="info" size={30} color="#F3F3F3"/>
+            <Icon name="info" size={30} color="#F3F3F3"/>
+            </View>
+                
+        </View>
+
+
+
+
+
+        
+
+        <View style={{position: 'absolute', height:"100%",  width: "100%", backgroundColor: colorUser, borderRadius:13, opacity: 0.5 }}>
+            
+            <View style={{position: 'absolute', height:"100%",  width: "50%", backgroundColor: "#4c5054", left:0, opacity:0.2}}>
+
+            </View>
+
+
+            <View style={{position: 'absolute', height:"100%",  width: "50%", backgroundColor: "#292626", right:0,  opacity:0.2}}>
+            </View>
+
         </View>
         
 
@@ -259,6 +344,14 @@ const styles = StyleSheet.create({
         alignItems: "center"
 
     },
+    activity: {
+        fontSize: 20,
+        fontWeight: "bold",
+        justifyContent: "center",
+        alignItems: "center",
+        color:"#f3f3f3"
+
+    },
 });
   
 
@@ -271,5 +364,7 @@ RankingProfil.propTypes = {
     pseudo    : PropTypes.string,
     ranking   : PropTypes.number,
     nbZb      : PropTypes.number,
-  
+    partner   : PropTypes.bool,
+    youtuber  : PropTypes.bool,
+    online    : PropTypes.bool,
   };

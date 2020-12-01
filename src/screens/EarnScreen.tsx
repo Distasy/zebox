@@ -2,13 +2,11 @@ import React from "react";
 import { StyleSheet, View, Text, Dimensions, SafeAreaView } from "react-native";
 import Swiper from 'react-native-swiper';
 import Card from "../components/Cards/HorizontalCardv2";
-import CardFlip from 'react-native-card-flip';
 import { Col, Grid } from "react-native-easy-grid";
 import { ScrollView } from "react-native-gesture-handler";
 import { CardFour, CardEcomFour } from "react-native-card-ui";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import FlipCard from 'react-native-flip-card';
-import CountDown from 'react-native-countdown-component';
 
 
 

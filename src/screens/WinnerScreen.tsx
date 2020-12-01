@@ -14,6 +14,9 @@ const SecondRoute = () => (
                   pseudo="Mr Pivert"
                   ranking={1}
                   nbZb={9999 }
+                  youtuber={true}
+                  partner={true}
+                  online={true}
                   img="https://cdn.discordapp.com/attachments/775159078950535198/775832708479844392/avatar8.png"/>
       </View>
 
@@ -22,6 +25,9 @@ const SecondRoute = () => (
                  pseudo="Lilian"
                  ranking={2}
                  nbZb={2351}
+                 youtuber={true}
+                 partner={true}
+                 online={true}
                  img="https://cdn.discordapp.com/attachments/775159078950535198/775831540810776586/avatar3.png"/>
       </View>
 
@@ -37,6 +43,9 @@ const SecondRoute = () => (
                  pseudo="Quentin haha"
                  ranking={10}
                  nbZb={123}
+                 youtuber={false}
+                 partner={true}
+                 online={false}
                  img="https://cdn.discordapp.com/attachments/775159078950535198/775831377689182208/avatar1.png"/>
       </View>
       <View style={{flex: 1, marginBottom: 20, alignItems: "center"}}>
@@ -44,6 +53,7 @@ const SecondRoute = () => (
                  pseudo="Quentin haha"
                  ranking={10}
                  nbZb={123}
+                 online={true}
                  img="https://cdn.discordapp.com/attachments/775159078950535198/775831377689182208/avatar1.png"/>
       </View>
       <View style={{flex: 1, marginBottom: 20, alignItems: "center"}}>
@@ -51,6 +61,7 @@ const SecondRoute = () => (
                  pseudo="Quentin haha"
                  ranking={10}
                  nbZb={123}
+                 online={false}
                  img="https://cdn.discordapp.com/attachments/775159078950535198/775831377689182208/avatar1.png"/>
       </View>
 
