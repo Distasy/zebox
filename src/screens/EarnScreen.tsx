@@ -11,7 +11,7 @@ import FlipCard from 'react-native-flip-card';
 
 
 const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#303136', marginTop: 10}]} >
+  <View style={[styles.scene, { backgroundColor: '#303136'}]} >
     <ScrollView>
       <View>
       <CardEcomFour
@@ -66,7 +66,7 @@ const FirstRoute = () => (
 );
  
 const SecondRoute = () => (
-  <View style={{marginTop: 10}}>
+  <View>
     <ScrollView>
       <FlipCard flipHorizontal={true} flipVertical={false}>
         <View>

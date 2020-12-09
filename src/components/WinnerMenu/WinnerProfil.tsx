@@ -7,7 +7,7 @@ import FlipCard from 'react-native-flip-card';
 import { Audio } from 'expo-av';
 
 
-export default function WinnerProfil(props: { borderL: any; img: any; box: any; pseudo: any; time: any; nameItem: any; rarity: any; imgItem: any; box2: any; nbZb: any; }) {
+export default function WinnerProfil(props: { userColor: any; img: any; box: any; pseudo: any; time: any; nameItem: any; rarity: any; imgItem: any; box2: any; nbZb: any; }) {
 
     let  rectoVerso = false;
 
@@ -44,7 +44,7 @@ export default function WinnerProfil(props: { borderL: any; img: any; box: any; 
     const windowHeight = Dimensions.get('window').height;
 
    // ~~~~ Importation des props ~~~~  //
-   const borderL  = props.borderL;
+   const userColor  = props.userColor;
    const img      = props.img;
    const box      = props.box;
    const pseudo   = props.pseudo;
@@ -73,7 +73,7 @@ export default function WinnerProfil(props: { borderL: any; img: any; box: any; 
   return (
     <FlipCard flipHorizontal={true} flipVertical={false} friction={15} onFlipStart={on_press_handle} >
     <View>
-    <View style={[styles.profil, {width: windowWidth * 0.90, height: windowHeight * 0.15, borderColor: borderL, borderLeftWidth: 10,
+    <View style={[styles.profil, {width: windowWidth * 0.90, height: windowHeight * 0.15, borderColor: userColor, borderLeftWidth: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -89,6 +89,9 @@ export default function WinnerProfil(props: { borderL: any; img: any; box: any; 
     colors={['rgba(51, 51, 51, 0.20)', '#333333', '#333333']}
     style={styles.FadeAway_discover}>
 
+
+        <View style={{height:"100%", width:"100%", backgroundColor: userColor, borderRadius:20, position:"absolute", opacity:0.1}}>
+        </View>
 
         <View style={{position : "absolute", left: "5%", top:"18%"}}>
             <Image source={{ uri: img }} style={[styles.image, { height: 70, width : 70, }]}/>
@@ -115,7 +118,7 @@ export default function WinnerProfil(props: { borderL: any; img: any; box: any; 
 
 
     <View>
-    <View style={[styles.profil, {width: windowWidth * 0.90, height: windowHeight * 0.15, borderColor: borderL, borderRightWidth: 10,
+    <View style={[styles.profil, {width: windowWidth * 0.90, height: windowHeight * 0.15, borderColor: userColor, borderRightWidth: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -142,7 +145,7 @@ export default function WinnerProfil(props: { borderL: any; img: any; box: any; 
         <View style={{alignItems: 'center', top: "9%", position: 'absolute', width: '100%'}}>
             <Text style={styles.pseudo}>Item won</Text>
             <Text style={styles.pseudo}>{nameItem}</Text>
-            <Text style={[styles.rarity, {color: borderL}]}>{rarity}</Text>
+            <Text style={[styles.rarity, {color: userColor}]}>{rarity}</Text>
         </View>
         <View style={{alignItems: 'center', top: "25%", position: 'absolute', width: '100%'}}>
             <Text style={styles.price}>Price</Text>
@@ -219,8 +222,7 @@ const styles = StyleSheet.create({
     rarity: {
         fontSize: 20,
         fontWeight: "bold",
-        top: "12%",
-        textDecorationLine: "underline"
+        top: "12%"
 
     },
     imgItem: {
@@ -254,7 +256,7 @@ const styles = StyleSheet.create({
 WinnerProfil.propTypes = {
 
     // Type
-    borderL  : PropTypes.string,
+    userColor  : PropTypes.string,
     img      : PropTypes.string,
     box      : PropTypes.string,
     box2     : PropTypes.string,

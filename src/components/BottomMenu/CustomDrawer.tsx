@@ -72,7 +72,7 @@ export default function CustomDrawer(props) {
                         )}
                         label="Profile"
                         labelStyle={{color: "white"}}
-                        onPress={() => {}}
+                        onPress={() => {props.navigation.navigate('Profile')}}
                     />
                     </Drawer.Section>
                     <Drawer.Section>
@@ -99,7 +99,7 @@ export default function CustomDrawer(props) {
                         )}
                         label="Settings"
                         labelStyle={{color: "white"}}
-                        onPress={() => {}}
+                        onPress={() => {props.navigation.navigate('Settings')}}
             /> 
             <Divider style={{backgroundColor: "#18191d" }}/>
             <DrawerItem

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { Image } from "react-native";
 import {
   createBottomTabNavigator,
   BottomTabBarProps,
@@ -13,17 +12,21 @@ import { useSafeArea } from "react-native-safe-area-context";
 import { View, StatusBar } from "react-native";
 import { Appbar } from 'react-native-paper';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from '../../screens/Account/LoginScreen';
+import LoginScreen from "../../screens/Account/LoginScreen";
 import RegisterScreen from '../../screens/Account/RegisterScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawer from '../../components/BottomMenu/CustomDrawer';
+import SplashScreen from "../../screens/Account/SplashScreen";
+import ProfileScreen from "../../screens/Profile/Profile";
+import SettingsScreen from "../../screens/Settings/SettingsScreen";
+import ProductDetails from "../../screens/Products/Details";
+
 
 const Drawer = createDrawerNavigator();
 const BottomMenuDrawer = () => {
   return (
       <Drawer.Navigator initialRouteName="Home" drawerContent={props => <CustomDrawer {...props} />}>
         <Drawer.Screen name="Home" component={BottomMenu} />
-        <Drawer.Screen name="Login" component={LoginScreen} />
       </Drawer.Navigator>
   );
 }
@@ -52,6 +55,13 @@ const BottomMenu = ({navigation}) => {
   const _handleSearch = () => console.log('Searching');
 
   const _handleMore = () => console.log('Shown more');
+  
+  var cart;
+  var b = 1;
+  if(navigation.navigate.routeName == "shoppingcart")
+  {
+    cart = <Appbar.Action icon="cart" onPress={_handleMore} />
+  }
 
   return (
     <View style={{ flex: 1, position: "relative"}}>
@@ -61,6 +71,7 @@ const BottomMenu = ({navigation}) => {
         <Appbar.Content title={null} />
         <Appbar.Action icon={{uri: "https://cdn.discordapp.com/attachments/519799997534044170/782649632383434782/zb_y.png" }} onPress={_handleSearch} />
         <Appbar.Action icon="bell" onPress={_handleMore} />
+        {cart}
       </Appbar.Header>
       <Tab.Navigator
         tabBar={(props: BottomTabBarProps) => <TabBar {...props} />}
@@ -86,13 +97,17 @@ const Stack = createStackNavigator();
 
 export const BottomMenuStack = () => {
   return (
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen options={{headerShown: false}} name="Home" 
         component={BottomMenuDrawer} 
         />
-
+        <Stack.Screen name="Shop" options={{headerShown: false}} component={ShopScreen} />
+        <Stack.Screen name="Profile" options={{ headerStyle: { backgroundColor: '#18191d'}, headerTintColor:"white"}} component={ProfileScreen} />
+        <Stack.Screen name="Settings" options={{ headerStyle: { backgroundColor: '#18191d'}, headerTintColor:"white"}} component={SettingsScreen} />
+        <Stack.Screen name="Details" options={{ headerStyle: { backgroundColor: '#18191d'}, headerTintColor:"white", title:"Casque DJI"}} component={ProductDetails} />
         <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen} />
-        <Stack.Screen name="Register" options={{headerShown: false}} component={RegisterScreen} />
+        <Stack.Screen options={{headerShown: false}} name="Register" component={RegisterScreen} />
+        <Stack.Screen options={{headerShown: false}} name="SplashScreen" component={SplashScreen} />
       </Stack.Navigator>
   );
 }
