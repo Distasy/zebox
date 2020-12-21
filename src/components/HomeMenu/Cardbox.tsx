@@ -208,8 +208,9 @@ switch(rarity) {
 const styles = StyleSheet.create({
 
     card: {
-        width: "90%",
-        height: "45%",
+        marginTop: '5%',
+        width: "95%",
+        height: "100%",
         backgroundColor: "#f3f3f3",
         borderRadius: 25,
     },
