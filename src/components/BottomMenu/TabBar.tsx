@@ -9,12 +9,20 @@ import {
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { BottomMenuItem } from "./BottomMenuItem";
 import { blue } from "../../styles";
+import {useRoute} from '@react-navigation/native';
+import { Appbar } from 'react-native-paper';
 
 export const TabBar = ({
   state,
   descriptors,
   navigation,
 }: BottomTabBarProps) => {
+  var cart;
+  var b = 0;
+  if(b == 1)
+  {
+    cart = <Appbar.Action icon="cart" />
+  }
   const [translateValue] = useState(new Animated.Value(0));
   const totalWidth = Dimensions.get("window").width;
   const tabWidth = totalWidth / state.routes.length;
