@@ -3,6 +3,7 @@ import { View, Dimensions, StyleSheet, Image, Text, Alert, TouchableOpacity} fro
 import PropTypes from 'prop-types';
 import { Col, Grid } from "react-native-easy-grid";
 import FlipCard from 'react-native-flip-card';
+import CoinFlipV2 from './CoinFlipV2';
 
 export default function CoinRoom(props: { imgA: any; imgB: any; num: any; pseudoA: any; pseudoB: any;}) {
 
@@ -41,20 +42,12 @@ export default function CoinRoom(props: { imgA: any; imgB: any; num: any; pseudo
                       <View  style={{ width: "65%", alignSelf: "flex-end", right:"5%", alignItems:"center"}}>
                          <Image source={{ uri: imgB }}  style={ [ {height:80, width: 80 }, styles.images ] } />
                          <Text style={styles.pseudo}>Quentin</Text>
-
                       </View>
                     </Col>
                     
                 </Grid>
                 <View style={{height:"100%", width:"100%", position:"absolute", justifyContent:"center", alignItems:"center"}}>
-                  <FlipCard flipHorizontal={true} flipVertical={false} friction={6} perspective={5000} clickable={false} flip={fliped}>
-                    <View style={{width:"100%", height:"100%", justifyContent:"center"}}>
-                          <Image source={{ uri: "https://cdn.discordapp.com/attachments/775159078950535198/802158575752839168/coinA.png" }}  style={ [ {height:80, width: 80 }, styles.images ] } />
-                    </View>
-                    <View style={{width:"100%", height:"100%", justifyContent:"center"}}>
-                          <Image source={{ uri: "https://media.discordapp.net/attachments/775159078950535198/802158970026459156/coinB.png" }}  style={ [ {height:80, width: 80 }, styles.images ] } />
-                    </View>
-                  </FlipCard>
+                  <CoinFlipV2/>
                 </View>
         </View>
     )
@@ -80,8 +73,7 @@ const styles = StyleSheet.create({
     color: "#ecf0f1",
     fontSize:18,
     fontWeight:"bold",
-  }
-
+  },
 
 });
 

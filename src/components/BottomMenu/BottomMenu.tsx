@@ -31,7 +31,7 @@ import GuessScreen from "../../screens/Modes/GuessScreen";
 import BoxesScreen from "../../screens/Modes/BoxesScreen";
 import FetchInfo from './TabBar';
 
-const BottomMenu = ({navigation}) => {
+const BottomMenu = ({navigation} : any) => {
   const Tab = createBottomTabNavigator();
 
   const _handleSearch = () => console.log('Searching');
@@ -49,8 +49,8 @@ const BottomMenu = ({navigation}) => {
       <Appbar.Header statusBarHeight={0} style={{backgroundColor: "#18191d"}}>
         <Appbar.Action icon="menu" onPress={() => navigation.openDrawer()} />
         <Appbar.Content title={null} />
-        <Appbar.Action icon={{uri: "https://cdn.discordapp.com/attachments/519799997534044170/782649632383434782/zb_y.png" }} onPress={_handleSearch} />
-        <Appbar.Action icon="bell" />
+        <Appbar.Action onPress={ () => navigation.navigate('Activity') } icon={{uri: "https://cdn.discordapp.com/attachments/519799997534044170/782649632383434782/zb_y.png" }} />
+        <Appbar.Action onPress={ () => navigation.navigate('Notifications') } icon="bell" />
       </Appbar.Header>
       <Tab.Navigator
         tabBar={(props: BottomTabBarProps) => <TabBar {...props} />}
@@ -84,7 +84,7 @@ const BottomMenuDrawer = () => {
 
 const Stack = createStackNavigator(); 
 
-export const BottomMenuStack = ({navigation}) => {
+export const BottomMenuStack = ({navigation} : any) => {
   return (
       <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen options={{headerShown: false}} name="Home" 

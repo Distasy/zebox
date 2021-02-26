@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import CoinFlipV2 from '../../components/Modes/CoinFlipV2';
 
 export default function GuessScreen() {
   return (
     <View style={styles.container}>
-        <Text style={{color: "white"}}>GuessScreen</Text>
+      <CoinFlipV2/>
     </View>
   );
 }
