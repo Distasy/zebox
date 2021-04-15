@@ -4,6 +4,11 @@ Zebox App
 Application mobile Zebox (prototype) réalisé avec [React Native](https://reactnative.dev/)
 
 
+# Prérequis
+* Node js (avec npm)
+* Expo
+
+
 # Installation des modules
 
 Depuis votre terminal ou console Node.js, dirigez-vous dans le répertoire de l'application et tapez la commande suivante :
