@@ -2,6 +2,6 @@
 Zebox App
 
 
-@Quentin @Tchoow
 
-[I'm an inline-style link](https://www.google.com)
+[@Quentinsvn](https://github.com/quentinsvn)
+[@Tchoow](https://github.com/Tchoow)
